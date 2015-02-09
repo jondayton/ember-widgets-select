@@ -75,13 +75,12 @@ Ember.Widgets.TabbableModal = Ember.Mixin.create
      # 3. Tabbable element inside the content element
      # 4. The close button (has class "close")
     hasFocus = [@get 'currentFocus']
-    if hasFocus[0] == null or not $.contains(@$()[0], hasFocus[0])
-      hasFocus = @$( "[autofocus]" )
+    if hasFocus[0] is null or not $.contains(@$()[0], hasFocus[0])
+      hasFocus = @$('[autofocus]')
     if hasFocus.length == 0
-      hasFocus = @$( ":tabbable" )
-    if hasFocus.length > 0
-      focusElement = hasFocus[0]
-      if focusElement.className.indexOf("close") > -1
+      hasFocus = @$(':tabbable')
+    if focusElement = hasFocus[0]
+      if focusElement.className.indexOf('close') > -1
         # if we have more than two tabbable objects, we do not want to tab
         # to close button
         # while if we do not have any choice, the close button is chosen
@@ -89,7 +88,6 @@ Ember.Widgets.TabbableModal = Ember.Mixin.create
           focusElement = hasFocus[1]
       focusElement.focus()
       @set 'currentFocus', focusElement
-
 
   _checkContainingElement: (containers, element) ->
     for containerItem in containers
@@ -111,7 +109,7 @@ Ember.Widgets.TabbableModal = Ember.Mixin.create
     return if event.isDefaultPrevented()
 
     if event.keyCode == @KEY_CODES.ESCAPE and @get 'escToCancel'
-      @doCancelation()
+      @send 'sendCancel'
       event.preventDefault()
     else if event.keyCode == @KEY_CODES.TAB
       # tabbable objects list without close button
@@ -119,10 +117,10 @@ Ember.Widgets.TabbableModal = Ember.Mixin.create
 
       _currentFocus = $(document.activeElement)?[0]
 
-      _index =tabbableObjects.index _currentFocus
+      _index = tabbableObjects.index _currentFocus
       if _index == -1
         @_focusTabbable()
-      if (tabbableObjects.length > 0)
+      if tabbableObjects.length > 0
         first = tabbableObjects[0]
         last = tabbableObjects[tabbableObjects.length - 1]
         # check the two ends of the array to make it the tab loop
