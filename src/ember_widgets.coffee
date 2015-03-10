@@ -9,7 +9,6 @@ Ember.libraries?.register 'Ember Widgets', Ember.Widgets.VERSION
 require 'dependencies/ember-addepar-mixins/resize_handler'
 
 # Ember-Widgets
-require 'build/src/text_widget/dom_helper'
 require 'build/src/templates'
 require 'build/src/mixins'
 require 'build/src/accordion'
