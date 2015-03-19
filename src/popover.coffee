@@ -58,6 +58,9 @@ Ember.Widgets.BodyEventListener,
   bodyClick: -> @hide()
 
   hide: ->
+    focusBackElement = @get 'targetElement'
+    if focusBackElement[0]?
+      focusBackElement[0].focus()
     return if @get('isDestroyed')
     @set('isShowing', no)
     if @get('fadeEnabled')
