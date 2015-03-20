@@ -59,8 +59,6 @@ Ember.Widgets.BodyEventListener,
 
   hide: ->
     focusBackElement = @get 'targetElement'
-    if focusBackElement[0]?
-      focusBackElement[0].focus()
     return if @get('isDestroyed')
     @set('isShowing', no)
     if @get('fadeEnabled')
@@ -70,6 +68,8 @@ Ember.Widgets.BodyEventListener,
         Ember.run this, @destroy
     else
       Ember.run this, @destroy
+    # if focusBackElement[0]?
+    #   focusBackElement[0].focus()
 
   ###
   Calculate the offset of the given iframe relative to the top window.
