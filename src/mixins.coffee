@@ -78,7 +78,7 @@ Ember.Widgets.BodyEventListener = Ember.Mixin.create
     $(@get('bodyElementSelector')).off "click", @_clickHandler
     @_clickHandler = null
 
-Ember.Widgets.TabbableModal = Ember.Mixin.create
+Ember.Widgets.TabbableModal = Ember.Mixin.create Ember.Widgets.KeyboardHelper,
   currentFocus: null
 
   _focusTabbable: ->

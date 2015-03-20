@@ -1,6 +1,6 @@
 Ember.Widgets.PopoverMixin =
 Ember.Mixin.create Ember.Widgets.StyleBindingsMixin,
-Ember.Widgets.BodyEventListener,
+Ember.Widgets.BodyEventListener, Ember.Widgets.TabbableModal,
   layoutName: 'popover'
   classNames: ['popover']
   classNameBindings: ['isShowing:in', 'fadeEnabled:fade', 'placement']
@@ -68,8 +68,8 @@ Ember.Widgets.BodyEventListener,
         Ember.run this, @destroy
     else
       Ember.run this, @destroy
-    # if focusBackElement[0]?
-    #   focusBackElement[0].focus()
+    if focusBackElement[0]?
+      focusBackElement[0].focus()
 
   ###
   Calculate the offset of the given iframe relative to the top window.

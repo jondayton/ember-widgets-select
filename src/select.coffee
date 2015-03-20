@@ -401,7 +401,7 @@ Ember.AddeparMixins.ResizeHandlerMixin, Ember.Widgets.KeyboardHelper,
     @userDidSelect(item) unless Ember.isEmpty(item)
     # in case dropdown doesn't close
     @send 'hideDropdown'
-    @$().focus()
+    # @$().focus()
     # TODO(Peter): HACK the web app somehow reloads when enter is pressed.
     event.preventDefault()
 
