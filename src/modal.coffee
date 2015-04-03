@@ -1,6 +1,5 @@
 Ember.Widgets.ModalComponent =
-Ember.Component.extend Ember.Widgets.StyleBindingsMixin,
-Ember.Widgets.DomHelper, Ember.Widgets.TabbableModal,
+Ember.Component.extend Ember.Widgets.StyleBindingsMixin, Ember.Widgets.TabbableModal,
   layoutName: 'modal'
   classNames: ['modal']
   classNameBindings: ['isShowing:in', 'hasCloseButton::has-no-close-button', 'fadeEnabled:fade']
