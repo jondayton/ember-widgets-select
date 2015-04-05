@@ -1,6 +1,6 @@
-Ember.AddeparMixins = Ember.AddeparMixins || Ember.Namespace.create();
+import Ember from 'ember';
 
-Ember.AddeparMixins.ResizeHandlerMixin = Ember.Mixin.create({
+export default Ember.Mixin.create({
   resizeEndDelay: 200,
   resizing: false,
   onResizeStart: Ember.K,

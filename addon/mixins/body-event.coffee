@@ -1,4 +1,4 @@
-import Ember from 'ember'
+`import Ember from 'ember'`
 
 BodyEventListener = Ember.Mixin.create
   bodyElementSelector: 'html'
@@ -29,4 +29,4 @@ BodyEventListener = Ember.Mixin.create
     $(@get('bodyElementSelector')).off "click", @_clickHandler
     @_clickHandler = null
 
-export default BodyEventListener;
+`export default BodyEventListener`

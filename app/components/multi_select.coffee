@@ -1,21 +1,8 @@
-Ember.Widgets.MultiSelectOptionView = Ember.View.extend
-  tagName: 'li'
-  templateName: 'multi-select-item'
-  classNames:   'ember-select-search-choice'
-  labelPath: Ember.computed.alias 'controller.optionLabelPath'
+`import Ember from 'ember'`
+`import MultiSelectOptionView from 'ember-widgets-select/partials/multi-select-option'`
+`import SelectComponent from 'ember-widgets-select/components/select'`
 
-  didInsertElement: ->
-    @_super()
-    @labelPathDidChange()
-
-  labelPathDidChange: Ember.observer ->
-    labelPath = @get 'labelPath'
-    path = if labelPath then "context.#{labelPath}" else 'context'
-    Ember.defineProperty(this, 'label', Ember.computed.alias(path))
-    @notifyPropertyChange 'label'
-  , 'context', 'labelPath'
-
-Ember.Widgets.MultiSelectComponent = Ember.Widgets.SelectComponent.extend
+MultiSelectComponent = SelectComponent.extend
   layoutName: 'multi-select'
   selections: undefined
   choicesFieldClass: ''
@@ -37,7 +24,7 @@ Ember.Widgets.MultiSelectComponent = Ember.Widgets.SelectComponent.extend
       if valuePath then selections.getEach(valuePath) else selections
   .property 'selections.[]'
 
-  selectionItemView: Ember.Widgets.MultiSelectOptionView
+  selectionItemView: MultiSelectOptionView
 
   # Invisible span used to make sure there is a good amount of room for either
   # the placeholder values, or for the query the user has entered.
@@ -110,8 +97,3 @@ Ember.Widgets.MultiSelectComponent = Ember.Widgets.SelectComponent.extend
   actions:
     removeSelectItem: (item) ->
       @removeSelectItem(item)
-
-Ember.Handlebars.helper(
-  'multi-select-component'
-  Ember.Widgets.MultiSelectComponent
-)
