@@ -2,6 +2,7 @@
 `import MultiSelectOptionView from 'ember-widgets-select/partials/multi-select-option'`
 `import SelectComponent from 'ember-widgets-select/components/select'`
 
+
 MultiSelectComponent = SelectComponent.extend
   layoutName: 'multi-select'
   selections: undefined
