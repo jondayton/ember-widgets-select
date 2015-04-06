@@ -1,7 +1,7 @@
 `import Ember from 'ember'`
-`import BodyEventListenerMixin from 'addon/mixins/body-event'`
-`import ResizeHandlerMixin from 'addon/mixins/resize_handler'`
-`import SelectOptionView from 'ember-widgets-select/views/partials/select-option-view'`
+`import BodyEventListenerMixin from 'ember-widgets-select/mixins/body-event'`
+`import ResizeHandlerMixin from 'ember-widgets-select/mixins/resize_handler'`
+`import SelectOptionView from './views/partials/select-option-view'`
 
 SelectComponent = Ember.Component.extend BodyEventListenerMixin, ResizeHandlerMixin,
   layoutName:         'select'

@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
-`import MultiSelectOptionView from 'ember-widgets-select/partials/multi-select-option'`
-`import SelectComponent from 'ember-widgets-select/components/select'`
+`import MultiSelectOptionView from './partials/multi-select-option'`
+`import SelectComponent from './components/select'`
 
 
 MultiSelectComponent = SelectComponent.extend

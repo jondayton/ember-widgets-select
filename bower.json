@@ -1,5 +1,5 @@
 {
-  "name": "ember-widgets",
+  "name": "ember-widgets-select",
   "version": "0.2.0",
   "main": [
     "./dist/js/ember-widgets.js",
